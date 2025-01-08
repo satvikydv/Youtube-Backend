@@ -1,1 +1,1 @@
-export const DB_NAME = "commit-ment";
+export const DB_NAME = "video-sharing-app";

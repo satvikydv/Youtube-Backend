@@ -7,6 +7,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET 
 });
 
+//this is a method to be used when we want to upload a file on cloudinary using the parameters passed in the request body
 const uploadOnCloudinary = async (localFilePath) => {
     try {
         if(!localFilePath) return null

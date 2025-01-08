@@ -4,15 +4,18 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 
+//cors
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true
 }))
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true}))
-app.use(express.static("public"))
-app.use(cookieParser())
+
+//middleware
+app.use(express.json({limit: "16kb"}))          //to parse json data
+app.use(express.urlencoded({extended: true}))   //to parse form data
+app.use(express.static("public"))               //to serve static files
+app.use(cookieParser())                         //to parse cookies
 
 //router import
 import userRouter from "./routes/user.routes.js"
